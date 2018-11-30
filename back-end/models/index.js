@@ -1,5 +1,12 @@
-var mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/front_end");
+const mongoose = require('mongoose');
 
-module.exports.TextPost = require("./textPost");
-module.exports.Comment = require("./comment");
+
+mongoose.connect('mongodb://localhost/front_end');
+
+
+module.exports = {
+	User: require('./User'),
+	TextPost: require('./textPost'),
+	LinkPost: require('./LinkPost'),
+	Comment: require('./Comment')
+};

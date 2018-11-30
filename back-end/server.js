@@ -1,7 +1,13 @@
+const express = require('express');
+const mongoose = require('mongoose');
+const app = express();
+const bodyParser = require('body-parser');
+
+const routes = require('./config/routes')
+
+
 require('dotenv').config();
 
-var express = require('express');
-var app = express();
 var redditRouter = require('./config/routes.js');
 
 app.use(function(req, res, next) {
@@ -11,7 +17,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-var bodyParser = require('body-parser');
+
 app.use(bodyParser.json());
 
 app.use(redditRouter);
